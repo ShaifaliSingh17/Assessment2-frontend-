@@ -1,0 +1,28 @@
+<p>list works!</p>
+<div class='card'>
+    <div class='card-body'>
+        <h4 class='card-title'>Person Data</h4><button class='btn btn-primary' (click)="newPerson($event)">Add New</button>
+        <table class='table table-hover'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Size</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let person of persons'>
+                    <td>{{person._id}}</td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.Description}}</td>
+                    <td>{{person.size}}</td>
+                    <td>
+                        <button class='btn btn-primary' (click)="doUpdate(person)">Update</button>
+                    <button class='btn btn-danger' (click)="doDelete(person)">Delete</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
